@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Conversion;
+namespace Tests\Feature\Rates;
 
 use App\CurrencyType\CurrencyType;
 use App\Models\User;
@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery\MockInterface;
 use Tests\TestCase;
 
-class ExternalConversionTest extends TestCase
+class ExternalRateTest extends TestCase
 {
     use RefreshDatabase;
     protected object $user;
@@ -25,7 +25,7 @@ class ExternalConversionTest extends TestCase
      *
      * @return void
      */
-    public function test_can_get_external_conversion(): void
+    public function test_can_get_external_rates(): void
     {
         \Mockery::mock(CurrencyType::class, fn(MockInterface $mock) => (
         $mock->shouldReceive('CurrencyTypeToConvert')->with($this->user->currency)));

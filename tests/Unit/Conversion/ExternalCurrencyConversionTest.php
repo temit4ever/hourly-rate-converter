@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Rate;
+namespace Tests\Unit\Conversion;
 
 use App\CurrencyType\CurrencyType;
 use App\Models\User;
@@ -17,7 +17,7 @@ class ExternalCurrencyConversionTest extends TestCase
         parent::setUp();
         $this->user = User::factory()->create();
     }
-    public function test_can_get_external_conversion_rate(): void
+    public function test_can_get_external_conversion(): void
     {
         \Mockery::mock(CurrencyType::class);
         $expected = app(ExternalConversionService::class)->externalRateConversion(

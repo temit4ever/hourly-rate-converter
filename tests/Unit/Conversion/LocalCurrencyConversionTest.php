@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Rate;
+namespace Tests\Unit\Conversion;
 
 use App\CurrencyType\CurrencyType;
 use App\Models\User;
@@ -10,7 +10,7 @@ use Mockery;
 use Mockery\MockInterface;
 use Tests\TestCase;
 
-class LocalCurrencyRateConversionTest extends TestCase
+class LocalCurrencyConversionTest extends TestCase
 {
     use RefreshDatabase;
     protected object $user;
@@ -27,7 +27,7 @@ class LocalCurrencyRateConversionTest extends TestCase
      *
      * @return void
      */
-    public function test_can_get_local_conversion_rate(): void
+    public function test_can_get_local_conversion(): void
     {
         $actual = [
             "local_conversion" => [

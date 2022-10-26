@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Conversion;
+namespace Tests\Feature\Rates;
 
 use App\CurrencyType\CurrencyType;
 use App\Models\User;
@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery\MockInterface;
 use Tests\TestCase;
 
-class LocalConversionTest extends TestCase
+class LocalRatesTest extends TestCase
 {
     use RefreshDatabase;
     protected object $user;
@@ -20,7 +20,7 @@ class LocalConversionTest extends TestCase
         $this->user = User::factory()->create();
     }
 
-    public function test_can_get_local_conversion(): void
+    public function test_can_get_local_rate(): void
     {
 
         $actual =
