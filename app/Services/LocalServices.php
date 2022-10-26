@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Contracts\CurrencyHourlyConverterInterface;
+use App\Interfaces\CurrencyHourlyConverterInterface;
 use App\Services\LocalConversion\LocalConversionService;
 
 class LocalServices implements CurrencyHourlyConverterInterface
