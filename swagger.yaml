@@ -1,0 +1,80 @@
+swagger: '2.0'
+info:
+  description: The exchange rate third party service call
+  version: 1.0.0
+  title: Exchange Rate
+host: api.apilayer.com
+basePath: /exchangerates_data
+tags:
+  - name: exchange-rate
+    description: Third Party service
+    externalDocs:
+      description: Find out more
+      url: >-
+        https://apilayer.com/marketplace/exchangerates_data-api#documentation-tab
+  - name: rates
+    description: Everything about retrieving the exchange rate based on supplied currency
+  - name: exchange-rates-data-api
+    description: Operations about third party service
+    externalDocs:
+      description: Find out more about the apilayer api
+      url: https://apilayer.com/
+schemes:
+  - https
+paths:
+  /exchangerates_data/latest:
+    get:
+      tags:
+        - rates
+      summary: Get rates of supplied currencies
+      description: Get rate of all specified currencies
+      operationId: thirdpartyservice
+      consumes:
+        - 'content-Type: text/plain'
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: base
+          type: string
+          required: false
+          description: Parameter description in Markdown.
+        - in: query
+          name: symbols
+          type: string
+          required: false
+          description: Parameter to get rates in integer value.
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Rates'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+definitions:
+  Rates:
+    type: object
+    properties:
+      base:
+        type: string
+        example: USD
+      date:
+        type: string
+        example: '2018-02-22'
+      rate:
+        type: object
+        properties:
+          EUR:
+            type: integer
+            example: 0.813399
+          GBP:
+            type: integer
+            example: 0.72007
+      result:
+        type: integer
+        example: 3724.305775
+      success:
+        type: boolean
+        example: true
