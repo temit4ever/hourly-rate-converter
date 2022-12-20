@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('company_name')->nullable();
             $table->string('email');
             $table->string('occupation');
-            $table->float('rate', 5, 2);
+            $table->smallInteger('rate');
             $table->string('currency');
             $table->timestamps();
         });

@@ -5,9 +5,8 @@ namespace App\Actions\User;
 use App\CurrencyType\CurrencyType;
 use App\Models\User;
 use App\Services\ExchangeRateService;
-use App\Services\ExternalService;
-use App\Services\LocalServices;
-use Illuminate\Support\Facades\Log;
+use App\Services\ExternalConversion\ExternalService;
+use App\Services\LocalConversion\LocalServices;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class ViewUserDetails

@@ -32,7 +32,7 @@ return [
     ],
 
     'exchange-rate' => [
-        'key' => env('EXCHANGE_RATE_API_KEY', 'UuuhztAUaqyWX50yugZfFnA0ij2AGFWc'),
+        'key' => env('EXCHANGE_RATE_API_KEY', 'dCAd7lWC9k4tEjWb3M2bp3ham0F045Tc'),
         'uri' => env('URI', 'https://api.apilayer.com/exchangerates_data/latest?'),
         'external' => env('EXTERNAL_EXCHANGE_RATE', false),
         'retry' => env('RETRY_TIMES', 10),

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', ViewAllUsers::class)->name('user.index');
 Route::group([
     'prefix' => '/'
 ], function () {
@@ -24,5 +24,4 @@ Route::group([
     Route::post('create-user', ProcessUserForm::class)->name('user.store');
 
     Route::get('view-user-details/{id}', ViewUserDetails::class)->name('user.show');
-    Route::get('user-lists', ViewAllUsers::class)->name('user.index');
 });

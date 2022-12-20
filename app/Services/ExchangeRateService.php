@@ -2,6 +2,9 @@
 
 namespace App\Services;
 
+use App\Services\ExternalConversion\ExternalService;
+use App\Services\LocalConversion\LocalServices;
+
 class ExchangeRateService
 {
     public function __construct(

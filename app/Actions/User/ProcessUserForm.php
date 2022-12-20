@@ -31,6 +31,6 @@ class ProcessUserForm
 
     public function htmlResponse()
     {
-        return response()->redirectTo('user-lists');
+        return response()->redirectTo('/');
     }
 }
