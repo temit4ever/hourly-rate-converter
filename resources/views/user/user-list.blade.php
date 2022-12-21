@@ -22,8 +22,14 @@
                             <td>{{$user['name']}}</td>
                             <td>
                                 <a href="{{ route('user.show', $user['id']) }}" class="btn btn-primary">
-                                Check Details
+                                Details
                                 </a>
+                                <form method="post" action="{{route('user.delete', $user ? $user['id'] : null)}}">
+                                    @method('delete')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+
                             </td>
                         @empty
                             <td>No users</td>
