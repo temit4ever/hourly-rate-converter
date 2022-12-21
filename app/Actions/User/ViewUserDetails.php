@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Services\ExchangeRateService;
 use App\Services\ExternalConversion\ExternalService;
 use App\Services\LocalConversion\LocalServices;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Log;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class ViewUserDetails
@@ -29,7 +31,7 @@ class ViewUserDetails
             'exchangeRate' => $this->exchangeRateConfig->retrieveExchangeRate(
                 $user->currency,
                 $user->rate
-            )
+            ),
         ];
     }
 

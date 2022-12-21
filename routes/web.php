@@ -1,5 +1,6 @@
 <?php
 
+use App\Actions\User\DeleteUser;
 use App\Actions\User\ProcessUserForm;
 use App\Actions\User\ShowUserForm;
 use App\Actions\User\ViewAllUsers;
@@ -24,4 +25,6 @@ Route::group([
     Route::post('create-user', ProcessUserForm::class)->name('user.store');
 
     Route::get('view-user-details/{id}', ViewUserDetails::class)->name('user.show');
+    Route::delete('user/delete/{id}', DeleteUser::class)->name('user.delete');
+
 });

@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('occupation');
             $table->smallInteger('rate');
             $table->string('currency');
+            $table->timestamp('action_time')->useCurrent();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

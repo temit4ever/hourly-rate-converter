@@ -18,8 +18,8 @@ class ViewAllUsers
     {
         try {
             return [
-                'users' => User::all()->toArray(),
-                'currencyTypes' => $this->currencyType->getCurrencyTypes(),
+                'users' => User::all()?->toArray(),
+                'currencyTypes' => $this->currencyType?->getCurrencyTypes(),
             ];
         }
         catch (Exception $e) {
