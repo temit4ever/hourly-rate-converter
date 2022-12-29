@@ -23,8 +23,8 @@ Route::group([
 ], function () {
     //Route::get('user-form', ShowUserForm::class)->name('user.create');
     Route::post('create-user', ProcessUserForm::class)->name('user.store');
-
     Route::get('view-user-details/{id}', ViewUserDetails::class)->name('user.show');
     Route::delete('user/delete/{id}', DeleteUser::class)->name('user.delete');
+    Route::get('collection', \App\Actions\Practical\Collection::class);
 
 });

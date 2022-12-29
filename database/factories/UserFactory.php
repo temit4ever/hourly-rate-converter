@@ -21,9 +21,9 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'company_name' => fake()->company(),
-            'occupation' => fake()->slug(),
-            'currency' => 'EUR',
-            'rate' => 430.34,
+            'occupation' => fake()->randomElement(['Engineer', 'Web Developer', 'Business Analyst', 'Footballer']),
+            'currency' => fake()->randomElement(['EUR', 'GBP', 'USD']),
+            'rate' => fake()->numberBetween(20, 100),
         ];
     }
 

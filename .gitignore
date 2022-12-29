@@ -2,7 +2,8 @@
 /public/build
 /public/hot
 /public/storage
-/shared
+/shared/db_data
+/storage/debugbar
 /storage/*.key
 /vendor
 .env
