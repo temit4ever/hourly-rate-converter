@@ -11,11 +11,12 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('name');
+            $table->unsignedBigInteger('subject_id');
             $table->string('company_name')->nullable();
             $table->string('email');
             $table->string('occupation');
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->string('currency');
             $table->timestamp('action_time')->useCurrent();
             $table->softDeletes();
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -32,7 +34,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('users');
     }

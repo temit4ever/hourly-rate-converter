@@ -19,6 +19,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'subject_id' => fake()->numberBetween(1, 8),
             'email' => fake()->unique()->safeEmail(),
             'company_name' => fake()->company(),
             'occupation' => fake()->randomElement(['Engineer', 'Web Developer', 'Business Analyst', 'Footballer']),

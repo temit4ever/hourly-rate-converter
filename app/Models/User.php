@@ -48,4 +48,12 @@ class User extends Authenticatable
         'updated_at' => 'datetime:Y-m-d h:m:s',
         'deleted_at' => 'datetime:Y-m-d h:m:s',
     ];
+
+    /**
+     * Get the subjects for the user.
+     */
+    public function subjects(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Subject::class);
+    }
 }
